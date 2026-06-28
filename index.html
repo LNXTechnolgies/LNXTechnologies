@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LNX Technologies</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="csshomefake.css">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="LNX">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+<main>
+<div class="page-wrap">
+
+  <div class="header">
+    <picture class="imageUp">
+      <img src="LNX_logo.png" alt="Logo LNX Technologies">
+    </picture>
+    <h1 class="titoloPagina">LNX TECHNOLOGIES</h1>
+  </div>
+
+  <div class="nav-container">
+    <div class="nav-item"><a href="CosaFacciamo.html">Cosa Facciamo?</a></div>
+    <div class="nav-item"><a href="index.html" class="active">LNX Technologies</a></div>
+    <div class="nav-item"><a href="Assistenza.html">Assistenza</a></div>
+  </div>
+
+  <div class="hero-slideshow">
+    <div class="hero-slide"><img src="Foto1.jpeg" alt="Foto 1"></div>
+    <div class="hero-slide"><img src="Foto2.png"  alt="Foto 2"></div>
+    <div class="hero-slide"><img src="vetro.png"  alt="Foto 3"></div>
+    <div class="hero-slide"><img src="Foto4.png"  alt="Foto 4"></div>
+    <div class="hero-overlay">
+      <p class="hero-label">LA TUA TECNOLOGIA, LA NOSTRA PASSIONE</p>
+      <h2 class="hero-title">Soluzioni tech<br><span>su misura per te</span></h2>
+      <a href="Assistenza.html" class="hero-cta">Richiedi assistenza →</a>
+    </div>
+  </div>
+
+  <section class="services-section">
+    <p class="section-label">I NOSTRI SERVIZI</p>
+    <h2 class="section-title">Cosa possiamo fare per te</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Pellicole Protettive</h3>
+        <p>Applicazione professionale di pellicole per smartphone e tablet, senza bolle e perfettamente allineate.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎮</div>
+        <h3>Montaggio Gaming PC</h3>
+        <p>Assembliamo PC ad alte prestazioni su misura per gaming, grafica professionale e programmazione.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Riparazione Computer</h3>
+        <p>Interventi hardware e software su desktop e portatili: componenti, sistema operativo, malware e molto altro.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Assistenza Telefonia</h3>
+        <p>Ottimizzazione software, configurazioni, aggiornamenti e ripristini per tutti i dispositivi mobili.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <p class="section-label">IN EVIDENZA</p>
+    <div class="video-row">
+      <div class="video-wrap">
+        <video src="videoPromo.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <div class="video-wrap">
+        <video src="videoPellicole.mp4" autoplay muted loop playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="columns1"><img class="logoF" src="LNX_logo.png" alt="Logo"></div>
+    <div class="columns2">
+      <h3 class="TitoloFooter">LNX Technologies</h3>
+      <p class="descrizioniF"><a class="linkFooter" href="CosaFacciamo.html">Cosa facciamo?</a></p>
+      <p class="descrizioniF"><a class="linkFooter" href="Assistenza.html">Negozio</a></p>
+      <p class="descrizioniF"><a class="linkFooter" href="#DoveciTrovi">Dove ci trovi?</a></p>
+    </div>
+    <div class="columns3">
+      <h3 class="TitoloFooter">Contatti</h3>
+      <p class="descrizioniF">📞 366-878-1188</p>
+      <p class="descrizioniF">📧 info.lnxtechnologies@gmail.com</p>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<script>
+let heroIdx = 0;
+function runHero() {
+  const slides = document.querySelectorAll('.hero-slide');
+  slides.forEach(s => s.classList.remove('active'));
+  heroIdx = (heroIdx + 1) % slides.length;
+  slides[heroIdx].classList.add('active');
+  setTimeout(runHero, 6000);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.hero-slide')[0].classList.add('active');
+  setTimeout(runHero, 6000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LNX Technologies — Assistenza</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cssAssistenza.css">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="LNX">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+<main>
+<div class="page-wrap">
+
+  <div class="header">
+    <picture class="imageUp">
+      <img src="LNX_logo.png" alt="Logo LNX Technologies">
+    </picture>
+    <h1 class="titoloPagina">LNX TECHNOLOGIES</h1>
+  </div>
+
+  <div class="nav-container">
+    <div class="nav-item"><a href="CosaFacciamo.html">Cosa Facciamo?</a></div>
+    <div class="nav-item"><a href="index.html">LNX Technologies</a></div>
+    <div class="nav-item"><a href="Assistenza.html" class="active">Assistenza</a></div>
+  </div>
+
+  <section class="assistenza-hero">
+    <p class="section-label">RICHIEDI SUPPORTO</p>
+    <h2 class="assistenza-title">Assistenza & Negozio</h2>
+    <p class="assistenza-lead">Seleziona il tipo di intervento di cui hai bisogno. Ti risponderemo nel più breve tempo possibile.</p>
+  </section>
+
+  <section class="servizi-section">
+    <div class="servizi-grid">
+
+      <div class="servizio-card" onclick="openModal(1)">
+        <div class="servizio-img-wrap">
+          <img src="Riparazione.png" alt="Riparazione Computer" class="servizio-img">
+          <div class="servizio-overlay">
+            <span class="servizio-overlay-label">Clicca per richiedere →</span>
+          </div>
+        </div>
+        <div class="servizio-info">
+          <span class="servizio-icon">💻</span>
+          <h3>Riparazione Computer</h3>
+          <p>Hardware, software, virus, componenti e sistema operativo.</p>
+        </div>
+      </div>
+
+      <div class="servizio-card" onclick="openModal(2)">
+        <div class="servizio-img-wrap">
+          <img src="Gaming.png" alt="Montaggio Computer" class="servizio-img">
+          <div class="servizio-overlay">
+            <span class="servizio-overlay-label">Clicca per richiedere →</span>
+          </div>
+        </div>
+        <div class="servizio-info">
+          <span class="servizio-icon">🎮</span>
+          <h3>Montaggio Computer</h3>
+          <p>PC gaming e workstation su misura per ogni esigenza.</p>
+        </div>
+      </div>
+
+      <div class="servizio-card" onclick="openModal(3)">
+        <div class="servizio-img-wrap">
+          <img src="Telefono.png" alt="Telefonia" class="servizio-img">
+          <div class="servizio-overlay">
+            <span class="servizio-overlay-label">Clicca per richiedere →</span>
+          </div>
+        </div>
+        <div class="servizio-info">
+          <span class="servizio-icon">📱</span>
+          <h3>Telefonia</h3>
+          <p>Ottimizzazione, configurazione e ripristino smartphone.</p>
+        </div>
+      </div>
+
+      <div class="servizio-card" onclick="openModal(4)">
+        <div class="servizio-img-wrap">
+          <img src="Pellicole.png" alt="Pellicole Protettive" class="servizio-img">
+          <div class="servizio-overlay">
+            <span class="servizio-overlay-label">Clicca per richiedere →</span>
+          </div>
+        </div>
+        <div class="servizio-info">
+          <span class="servizio-icon">🛡️</span>
+          <h3>Pellicole Protettive</h3>
+          <p>Applicazione professionale senza bolle per ogni dispositivo.</p>
+        </div>
+      </div>
+
+      <div class="servizio-card" onclick="openModal(5)">
+        <div class="servizio-img-wrap">
+          <img src="Altro.png" alt="Altro" class="servizio-img">
+          <div class="servizio-overlay">
+            <span class="servizio-overlay-label">Clicca per richiedere →</span>
+          </div>
+        </div>
+        <div class="servizio-info">
+          <span class="servizio-icon">🔧</span>
+          <h3>Altro...</h3>
+          <p>Hai un'altra esigenza? Scrivici e troveremo una soluzione.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="columns1"><img class="logoF" src="LNX_logo.png" alt="Logo"></div>
+    <div class="columns2">
+      <h3 class="TitoloFooter">LNX Technologies</h3>
+      <p class="descrizioniF"><a class="linkFooter" href="CosaFacciamo.html">Cosa facciamo?</a></p>
+      <p class="descrizioniF"><a class="linkFooter" href="Assistenza.html">Negozio</a></p>
+      <p class="descrizioniF"><a class="linkFooter" href="#DoveciTrovi">Dove ci trovi?</a></p>
+    </div>
+    <div class="columns3">
+      <h3 class="TitoloFooter">Contatti</h3>
+      <p class="descrizioniF">📞 366-878-1188</p>
+      <p class="descrizioniF">📧 info.lnxtechnologies@gmail.com</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const FORMS = [
+  { id: 1, titolo: 'Riparazione Computer' },
+  { id: 2, titolo: 'Montaggio Computer'   },
+  { id: 3, titolo: 'Telefonia'            },
+  { id: 4, titolo: 'Pellicole Protettive' },
+  { id: 5, titolo: 'Altro...'             },
+];
+</script>
+
+<div id="modal-overlay" class="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <span class="modal-tag">RICHIESTA INTERVENTO</span>
+      <h2 class="modal-title" id="modal-title">—</h2>
+    </div>
+    <form class="modal-form" id="modal-form" onsubmit="handleSubmit(event)">
+      <input type="hidden" id="tipo-intervento" name="tipo">
+      <label>Descrizione del problema
+        <textarea name="problema" placeholder="Descrivi brevemente il problema..." required rows="4"></textarea>
+      </label>
+      <div class="form-row">
+        <label>Numero di telefono
+          <input type="tel" name="telefono" placeholder="Es. 366-1234567" required>
+        </label>
+        <label>Indirizzo e-mail
+          <input type="email" name="email" placeholder="Es. esempio@email.com" required>
+        </label>
+      </div>
+      <p class="form-note">Per una risposta più rapida contattaci direttamente: <strong>366-878-1188</strong> | <strong>info.lnxtechnologies@gmail.com</strong></p>
+      <button type="submit" class="btn-invia">Invia richiesta</button>
+    </form>
+  </div>
+</div>
+
+</main>
+
+<script>
+function openModal(id) {
+  const form = FORMS.find(f => f.id === id);
+  document.getElementById('modal-title').textContent = form.titolo;
+  document.getElementById('tipo-intervento').value = form.titolo;
+  document.getElementById('modal-form').reset();
+  document.getElementById('modal-overlay').classList.add('modal-open');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('modal-open');
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-invia');
+  btn.textContent = '✓ Richiesta inviata!';
+  btn.style.background = '#00aa55';
+  setTimeout(closeModal, 1800);
+}
+</script>
+</body>
+</html>
