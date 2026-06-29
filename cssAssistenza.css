@@ -271,3 +271,132 @@
   .modal-box { padding: 24px 18px; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+
+ /* ── BOTTONE FISSO ── */
+    .social-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 8888;
+      background: var(--blue, #1e90ff);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(30,144,255,0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .social-fab:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(30,144,255,0.55);
+    }
+    .social-fab-icon { font-size: 20px; }
+
+    /* ── OVERLAY ── */
+    .social-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+    }
+    .social-overlay.open { display: flex; }
+
+    /* ── BOX ── */
+    .social-box {
+      background: #111620;
+      border: 1px solid #1e2d4a;
+      border-radius: 20px;
+      padding: 36px 40px 32px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+      animation: pop-in 0.25s ease;
+      position: relative;
+      text-align: center;
+    }
+
+    @keyframes pop-in {
+      from { opacity: 0; transform: scale(0.92) translateY(12px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .social-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: #181e2d;
+      border: 1px solid #1e2d4a;
+      color: #7a8aaa;
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .social-close:hover { color: #f0f4ff; border-color: #1e90ff; }
+
+    .social-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: #00d4ff;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .social-title {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #f0f4ff;
+      margin-bottom: 28px;
+    }
+
+    /* ── ICONE SOCIAL ── */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .social-link:hover { transform: translateY(-5px); }
+
+    .social-link img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+
+    .social-link span {
+      font-size: 12px;
+      font-weight: 600;
+      color: #7a8aaa;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.3px;
+    }
+    .social-link:hover span { color: #f0f4ff; }
