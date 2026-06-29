@@ -87,7 +87,9 @@
       <h3 class="TitoloFooter">LNX Technologies</h3>
       <p class="descrizioniF"><a class="linkFooter" href="CosaFacciamo.html">Cosa facciamo?</a></p>
       <p class="descrizioniF"><a class="linkFooter" href="Assistenza.html">Negozio</a></p>
-      <p class="descrizioniF"><a class="linkFooter" href="#DoveciTrovi">Dove ci trovi?</a></p>
+      <p class="descrizioniF">
+        <a class="linkFooter" onclick="openSocial()">Dove ci trovi?</a>
+      </p>
     </div>
     <div class="columns3">
       <h3 class="TitoloFooter">Contatti</h3>
@@ -97,8 +99,35 @@
   </div>
 
 </div>
-</main>
 
+
+</main>
+ <!-- POPUP SOCIAL -->
+  <div class="social-overlay" id="socialOverlay" onclick="handleSocialOverlay(event)">
+    <div class="social-box" id="socialBox">
+      <button class="social-close" onclick="closeSocial()">✕</button>
+      <span class="social-tag">Rimani aggiornato</span>
+      <h2 class="social-title">Seguici sui Social</h2>
+      <div class="social-icons">
+
+        <a class="social-link" href="https://www.facebook.com/share/19K3K7gDQd/?mibextid=wwXIfr" target="_blank" rel="noopener">
+          <img src="Facebook.png" alt="Facebook">
+          <span>Facebook</span>
+        </a>
+
+        <a class="social-link" href="https://www.instagram.com/lnx_technologies?igsh=MWh6YzgxMWVoYmtibQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">
+          <img src="Instagram.png" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+
+        <a class="social-link" href="https://www.tiktok.com/@lnx_technologies?_r=1&_t=ZN-97cVjkg3t2s" target="_blank" rel="noopener">
+          <img src="Tiktok.png" alt="TikTok">
+          <span>TikTok</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
 <script>
 let heroIdx = 0;
 function runHero() {
@@ -112,6 +141,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.hero-slide')[0].classList.add('active');
   setTimeout(runHero, 6000);
 });
+
+    function openSocial() {
+      document.getElementById('socialOverlay').classList.add('open');
+    }
+    function closeSocial() {
+      document.getElementById('socialOverlay').classList.remove('open');
+    }
+    function handleSocialOverlay(e) {
+      if (e.target === document.getElementById('socialOverlay')) closeSocial();
+    }
 </script>
 </body>
 </html>
