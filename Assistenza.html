@@ -12,6 +12,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="LNX">
   <link rel="manifest" href="site.webmanifest">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+   <script>
+  // Inizializza correttamente EmailJS
+  (function() {
+    emailjs.init({
+      publicKey: "QBUJ0glCnp0Nw7Iy3",
+      // Per localhost è importante
+      blockHeadless: false
+    });
+  })();
+</script>
 </head>
 <body>
 <main>
@@ -154,6 +166,14 @@ const FORMS = [
         <textarea name="problema" placeholder="Descrivi brevemente il problema..." required rows="4"></textarea>
       </label>
       <div class="form-row">
+        <label>Nome
+          <input type="text" name="nome" placeholder="Es. Mario" required>
+        </label>
+        <label>Cognome
+          <input type="text" name="cognome" placeholder="Es. Rossi" required>
+        </label>
+      </div>
+      <div class="form-row">
         <label>Numero di telefono
           <input type="tel" name="telefono" placeholder="Es. 366-1234567" required>
         </label>
@@ -213,12 +233,54 @@ function handleOverlayClick(e) {
 
 function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.btn-invia');
-  btn.textContent = '✓ Richiesta inviata!';
-  btn.style.background = '#00aa55';
-  setTimeout(closeModal, 1800);
-}
 
+  const btn = e.target.querySelector('.btn-invia');
+  const originalText = btn.textContent;
+  btn.textContent = 'Invio...';
+  btn.disabled = true;
+
+  const form = e.target;
+
+  // Prepara i parametri per EmailJS
+  const params = {
+    tipo: document.getElementById("tipo-intervento").value,
+    nome: form.nome.value,
+    cognome: form.cognome.value,
+    problema: form.problema.value,
+    telefono: form.telefono.value,
+    email: form.email.value
+  };
+
+  // Usa emailjs.send con la sintassi corretta
+  emailjs.send("service_oi7d9l9", "template_83slu6l", params)
+    .then(function(response) {
+      console.log("Email inviata con successo!", response.status, response.text);
+      btn.textContent = '✓ Richiesta inviata!';
+      btn.style.background = '#00aa55';
+
+      setTimeout(() => {
+        closeModal();
+        form.reset();
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 1500);
+    })
+    .catch(function(error) {
+      console.error("Errore EmailJS:", error);
+      btn.textContent = 'Errore invio';
+      btn.style.background = '#cc0000';
+
+      // Mostra l'errore specifico
+      alert('Errore nell\'invio: ' + (error.text || error.message || 'Errore sconosciuto'));
+
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 3000);
+    });
+}
     function openSocial() {
       document.getElementById('socialOverlay').classList.add('open');
     }

@@ -210,7 +210,8 @@
 
 .modal-form textarea,
 .modal-form input[type="tel"],
-.modal-form input[type="email"] {
+.modal-form input[type="email"],
+.modal-form input[type="text"] {
   width: 100%;
   background: var(--bg3);
   border: 1px solid var(--border);
