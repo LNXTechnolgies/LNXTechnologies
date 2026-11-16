@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lnxtechnolgies.github.io/LNXTechnologies/sitemap.xml
